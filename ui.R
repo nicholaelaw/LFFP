@@ -3,24 +3,6 @@ source(file.path('startup.d', 'specific.R'), encoding = 'UTF-8', local = FALSE)
 # header ------------------------------------------------------------------
 dsHeader <- dashboardHeader(
   title = appName
-  # tags$li(
-  #   class = 'dropdown menu',
-  #   a(href = "#", class = "dropdown-toggle", `data-toggle` = "dropdown", icon('ellipsis-h'), NULL),
-  #   tags$ul(
-  #     class = "dropdown-menu",
-  #     tags$li(tags$ul(
-  #       class = "menu",
-  #       tags$li(tags$a(
-  #         id = 'showNotes', href = '#', icon('question-circle'), class = 'action-button',
-  #         '使用说明'
-  #       )),
-  #       tags$li(tags$a(
-  #         id = 'showResult', href = '#', icon('arrow-right'), class = 'action-button',
-  #         '查看结果'
-  #       ))
-  #     ))
-  #   )
-  # )
 )
 
 
@@ -61,12 +43,6 @@ dsBody <- dashboardBody(
     ')),
     extendShinyjs(script = file.path('extendShinyjs.js'))
   ),
-  # tabsetPanel(
-  #   id =  'resultPanel',
-  #   tabPanel('主要', uiOutput('主要')),
-  #   tabPanel('还款计划', uiOutput('还款计划')),
-  #   tabPanel('Debugging', uiOutput('debugging'))
-  # )
   tabItems(
     tabItem(
       tabName = '数据工作',

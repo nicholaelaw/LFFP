@@ -1,5 +1,0 @@
-source(file.path('startup.d', 'libs.R'            ), encoding = 'UTF-8', local = FALSE)
-source(file.path('startup.d', 'opts.shiny.R'      ), encoding = 'UTF-8', local = FALSE)
-source(file.path('startup.d', 'opts.highcharter.R'), encoding = 'UTF-8', local = FALSE)
-source(file.path('startup.d', 'opts.DT.R'         ), encoding = 'UTF-8', local = FALSE)
-source(file.path('startup.d', 'fun.R'             ), encoding = 'UTF-8', local = FALSE)
