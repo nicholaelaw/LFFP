@@ -1,0 +1,60 @@
+div(
+  id = '基本参数',
+  # h3('基本参数'),
+  radioGroupButtons(
+    '首期性质', label = '首期性质', choices = c('首付款模式', '保证金模式'),
+    status = 'info'
+  ),
+  radioGroupButtons(
+    '计算逻辑', label = '计算逻辑', choices = c('车价首付型', '总价首付型'),
+    status = 'info'
+  ),
+  switchInput(
+    '排量', label = '车辆排量', onLabel = '小于1.6L', offLabel = '大于1.6L',
+    value = TRUE, onStatus = 'success', size = 'normal', handleWidth = '100'
+  ),
+  fluidRow(column(8L, grid = 'xs',
+    numericInput(
+      '裸车价', label = '裸车价', value = 66800, step = 0.01, width = '100%'
+    )
+  )),
+  fixedRow(
+    column(8L, grid = 'xs',
+      numericInput('保险费', label = '保险费用', value = 5000, step = 0.01, width = '100%')
+    ),
+    column(4L, grid = 'xs',
+      switchInput(
+        '保险加融', label = NULL, onLabel = '加融', offLabel = '不融',
+        value = TRUE, onStatus = 'success', size = 'normal', labelWidth = 0L
+      )
+    )
+  ),
+  fluidRow(
+    column(8L, grid = 'xs',
+      numericInput('购置税', label = '购置税', value = 0, step = 0.01, width = '100%')
+    ),
+    column(4L, grid = 'xs',
+      switchInput(
+        '购置税加融', label = NULL, onLabel = '加融', offLabel = '不融',
+        value = TRUE, onStatus = 'success', size = 'normal', labelWidth = 0L
+      )
+    )
+  ),
+  sliderInput(
+    '首期比例', '首期比例', min = 0L, max = 60L, step = 10L, post = '%',
+    value = 20L, width = '100%', ticks = FALSE
+  ),
+  sliderInput(
+    '融资期限', '融资期限', min = 12L, max = 60L, step = 12L, post = '期',
+    value = 36L, width = '100%', ticks = FALSE
+  ),
+  fluidRow(
+    column(6L, grid = 'xs',
+      numericInput('手续费', label = '手续费', value = 275, step = 0.1)
+    ),
+    column(6L, grid = 'xs',
+      numericInput('贴息', label = '贴息', value = 0, step = 0.1)
+    )
+  ),
+  hr()
+)

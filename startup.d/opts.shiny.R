@@ -1,0 +1,5 @@
+shinyOpts <- list(height = 500L)
+# options(shiny.port = 7828L)
+# options(shiny.reactlog = TRUE)
+options(shiny.autoreload = TRUE)
+# enableBookmarking(store = "server")

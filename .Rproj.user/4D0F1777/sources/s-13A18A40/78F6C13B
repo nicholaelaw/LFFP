@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1532978282006.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "78F6C13B",
+    "lastKnownWriteTime" : 1532978328,
+    "last_content_update" : 1532978328994,
+    "path" : "D:/Projects/final_problem/ui.d/基本参数.R",
+    "project_path" : "ui.d/基本参数.R",
+    "properties" : {
+        "cursorPosition" : "27,75",
+        "scrollLine" : "4"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
