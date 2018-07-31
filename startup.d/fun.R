@@ -1,3 +1,15 @@
+# custom --------------------------------------------------------------------------------------
+monthStart <- function(DATE) {
+  result <- DATE
+  day(result) <- 1L
+  return(result)
+}
+
+monthEnd   <- function(DATE) {
+  return(monthStart(DATE) + months(1L) - days(1L))
+}
+
+
 # patched functions ---------------------------------------------------------------
 # More options for actionButton
 # See gist: https://gist.github.com/xiaodaigh/7012930
