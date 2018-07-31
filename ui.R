@@ -22,6 +22,7 @@ dsSidebar <- dashboardSidebar(
     menuItem('数据工作',     tabName = '数据工作'),
     menuItem('数据文档',     tabName = '数据文档'),
     menuItem('其它工作',     tabName = '其它工作'),
+    menuItem('交接清单及未竟事宜', tabName = '清单'),
     menuItem('其它',         tabName = '其它')
   )
 )
@@ -55,6 +56,10 @@ dsBody <- dashboardBody(
     tabItem(
       tabName = '其它工作',
       includeMarkdown(file.path('www', 'doc', '其它工作简述.md'))
+    ),
+    tabItem(
+      tabName = '清单',
+      includeMarkdown(file.path('www', 'doc', '文件交接清单.md'))
     ),
     tabItem(
       tabName = '其它',
