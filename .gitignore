@@ -7,6 +7,12 @@
 .so
 .dll
 
+# Excel files are uploaded separately to avoid placing proprietary data
+# onto github
+.xlsx
+.xls
+.xlsm
+
 # Session Data files
 .RData
 # Example code in package build process

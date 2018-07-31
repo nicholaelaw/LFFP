@@ -1,3 +1,11 @@
+reportList <- c(
+  '1001 风控月报数据',
+  '2001 当月收租及存量收益',
+  '2002 坏账计提',
+  '2003 来年收益',
+  '3001 对外汽车资产明细'
+)
+
 div(
   id = 'section-数据工作',
   fluidRow(
@@ -5,15 +13,8 @@ div(
       dateInput('rDate-input', '选择报告日', value = monthStart(today()), language = 'zh-CN')
     ),
     column(4L, grid = 'xs',
-      selectizeInput('job-select', '选择数据类型', choices = c('风控月报', '财务月报'))
+      selectizeInput('job-select', '选择数据类型', choices = reportList)
     )
   ),
-  fluidRow(
-    column(4L, grid = 'xs',
-           dateInput('rDate-input', '选择报告日', value = monthStart(today()), language = 'zh-CN')
-    ),
-    column(4L, grid = 'xs',
-           selectizeInput('job-select', '选择数据类型', choices = c('风控月报', '财务月报'))
-    )
-  )
+  box(height = 200L)
 )
