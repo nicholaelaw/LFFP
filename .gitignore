@@ -6,15 +6,15 @@ vendors.json
 .Rapp.history
 
 # Rcpp compiled platform-specific binaries
-.o
-.so
-.dll
+*.o
+*.so
+*.dll
 
 # Excel files are uploaded separately to avoid placing proprietary data
 # onto github
-.xlsx
-.xls
-.xlsm
+*.xlsx
+*.xls
+*.xlsm
 
 # Session Data files
 .RData
