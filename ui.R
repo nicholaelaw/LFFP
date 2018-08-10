@@ -13,17 +13,13 @@ dsHeader <- dashboardHeader(
 
 
 # sidebar -----------------------------------------------------------------
-# 基本参数 <- source(file.path('ui.d', '基本参数.R'), encoding = 'UTF-8', local = TRUE)$value
-# 产品设置 <- source(file.path('ui.d', '产品设置.R'), encoding = 'UTF-8', local = TRUE)$value
-# 其它设置 <- source(file.path('ui.d', '其它设置.R'), encoding = 'UTF-8', local = TRUE)$value
-数据工作 <- source(file.path('ui.d', 'data-jobs.ui.R'),encoding = 'UTF-8', local = TRUE)$value
-
+# 数据工作 <- source(file.path('ui.d', 'data-jobs.ui.R'),encoding = 'UTF-8', local = TRUE)$value
 # 数据文档 <- source(file.path('ui.d', 'extra.R'),    encoding = 'UTF-8', local = TRUE)$value
 
 dsSidebar <- dashboardSidebar(
-  collapsed = FALSE,
+  collapsed = TRUE,
   sidebarMenu(
-    menuItem('数据工作',     tabName = '数据工作'),
+    menuItem('数据下载', tabName = '数据下载'),
     menuItem(
       '数据文档', tabName = '数据文档', startExpanded = TRUE,
       menuSubItem('数据工作简述',       tabName = '数据工作简述'),
@@ -70,7 +66,7 @@ dsBody <- dashboardBody(
     extendShinyjs(script = file.path('extendShinyjs.js'))
   ),
   tabItems(
-    tabItem(tabName = '数据工作', 数据工作),
+    tabItem(tabName = '数据下载', uiOutput('dataDownload')),
 
     # 数据文档 ----
     tabItem(
