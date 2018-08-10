@@ -1,3 +1,6 @@
+# Sensitive information
+vendors.json
+
 # History files
 .Rhistory
 .Rapp.history

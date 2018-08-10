@@ -1,3 +1,6 @@
+# Set encoding ------------------------------------------------------------
+encoding <- getOption("shiny.site.encoding", default = "UTF-8")
+
 # custom --------------------------------------------------------------------------------------
 monthStart <- function(DATE) {
   result <- DATE
@@ -10,7 +13,37 @@ monthEnd   <- function(DATE) {
 }
 
 
+
+
 # patched functions ---------------------------------------------------------------
+
+# includeMarkdown for Chinese
+includeMarkdown <- function(path) {
+  html <- markdown::markdownToHTML(path, fragment.only = TRUE, encoding = encoding)
+  return(HTML(html))
+}
+
+## function to render .Rmd files to html - does not embed image or add css
+## stolen from https://github.com/vnijs/shiny-site/raw/master/global.R
+includeRmd <- function(path, r_env = parent.frame()) {
+  paste(
+    readLines(path, warn = FALSE, encoding = 'UTF-8'),
+    collapse = '\n'
+  ) %>% knitr::knit2html(
+    text = .,
+    fragment.only = TRUE,
+    envir = r_env,
+    options = "",
+    stylesheet = "",
+    encoding = encoding
+  ) %>% gsub(
+    "&lt;!--/html_preserve--&gt;", "", . ## knitr adds this
+  ) %>% gsub(
+    "&lt;!--html_preserve--&gt;", "", . ## knitr adds this
+  ) %>% HTML
+}
+
+
 # More options for actionButton
 # See gist: https://gist.github.com/xiaodaigh/7012930
 actionButton <- function(inputId, label, icon = NULL, style = '',
@@ -47,12 +80,6 @@ actionButton <- function(inputId, label, icon = NULL, style = '',
     paste0("width: ", shiny::validateCssUnit(width), ";"), type = "button",
     class = btnClass, `data-val` = value,
     list(shiny:::validateIcon(icon), label), ...)
-}
-
-# includeMarkdown for Chinese
-includeMarkdown <- function(path) {
-  html <- markdown::markdownToHTML(path, fragment.only = TRUE, encoding = 'UTF-8')
-  return(HTML(html))
 }
 
 # patching column to use xs grid
