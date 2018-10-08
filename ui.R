@@ -69,46 +69,19 @@ dsBody <- dashboardBody(
     tabItem(tabName = '数据下载', uiOutput('dataDownload')),
 
     # 数据文档 ----
-    tabItem(
-      tabName = '数据工作简述',
-      includeMarkdown(file.path('www', 'doc', '数据工作简述.md'))
-    ),
-    tabItem(
-      tabName = '风控月报数据',
-      includeMarkdown(file.path('www', 'doc', '风控月报数据说明.md'))
-    ),
-    tabItem(
-      tabName = '当月收租及存量收益',
-      includeMarkdown(file.path('www', 'doc', '当月收租及存量收益说明.md'))
-    ),
-    tabItem(
-      tabName = '坏账计提',
-      includeMarkdown(file.path('www', 'doc', '坏账计提说明.md'))
-    ),
-    tabItem(
-      tabName = '来年收益',
-      includeMarkdown(file.path('www', 'doc', '来年收益说明.md'))
-    ),
-    tabItem(
-      tabName = '对外汽车资产明细',
-      includeMarkdown(file.path('www', 'doc', '对外汽车资产明细说明.md'))
-    ),
+    tabItem(tabName = '数据工作简述',       includeMarkdown(file.path('www', 'doc', '数据工作简述.md'))),
+    tabItem(tabName = '风控月报数据',       includeMarkdown(file.path('www', 'doc', '风控月报数据说明.md'))),
+    # tabItem(tabName = '当月收租及存量收益', includeMarkdown(file.path('www', 'doc', '当月收租及存量收益说明.md'))),
+    # tabItem(tabName = '坏账计提',           includeMarkdown(file.path('www', 'doc', '坏账计提说明.md'))),
+    # tabItem(tabName = '来年收益',           includeMarkdown(file.path('www', 'doc', '来年收益说明.md'))),
+    # tabItem(tabName = '对外汽车资产明细',   includeMarkdown(file.path('www', 'doc', '对外汽车资产明细说明.md'))),
 
     # 其它工作 ----
-    tabItem(
-      tabName = '服务提供商',
-      includeMarkdown(file.path('www', 'doc', '服务提供商.md'))
-    ),
-    tabItem(
-      tabName = '清单',
-      includeMarkdown(file.path('www', 'doc', '文件交接清单.md'))
-    ),
+    tabItem(tabName = '服务提供商',         includeMarkdown(file.path('www', 'doc', '服务提供商.md'))),
+    tabItem(tabName = '清单',               includeMarkdown(file.path('www', 'doc', '文件交接清单.md'))),
 
     # 其它 ----
-    tabItem(
-      tabName = 'todo',
-      includeMarkdown(file.path('www', 'doc', 'todo.md'))
-    )
+    tabItem(tabName = 'todo',               includeMarkdown(file.path('www', 'doc', 'todo.md')))
   )
 )
 
